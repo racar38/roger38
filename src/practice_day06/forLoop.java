@@ -1,2 +1,6 @@
-package practice_day06;public class forLoop {
+package practice_day06;
+
+public class forLoop {
+
+    
 }
