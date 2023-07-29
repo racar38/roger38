@@ -27,9 +27,9 @@ public class sayiTahminOyunu {
                 System.out.println("Dusuk soyledin arttir");
             } else if (tahmin==sayi) {
                 System.out.println("Tebrikler kazandiniz ");
-                dogruMu=true;                             // while true oldugu muddetce devam edecektir...
+                dogruMu=true;                             // while true oldugu zaman while dongusu sonlanacaktir...
             }else{
-                dogruMu=false;   //  while false oldugu zaman duracaktir
+                dogruMu=false;   //  while false oldugu surece while dongusu devam edecektir...
             }
         }
     }
