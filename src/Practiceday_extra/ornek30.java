@@ -31,18 +31,10 @@ public class ornek30 {
 
                     tekrarEdenKarakterler.add(String.valueOf(karakter[i]));
                 }
-
             }
-
 
         }
         System.out.println(tekrarEdenKarakterler);
     }
-
-
-
-
-
-
 
 }
