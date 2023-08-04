@@ -1,6 +1,7 @@
 package day30_immutableClasses;
 
 import java.time.LocalTime;
+import java.time.ZoneId;
 
 public class C02_LocalTime {
 
@@ -27,6 +28,9 @@ public class C02_LocalTime {
         System.out.println(time1.isBefore(time2)); // true
 
         System.out.println(time1.isAfter(time2)); // false
+
+        LocalTime time3=LocalTime.now(ZoneId.of("Europe/London"));  // Localtime.now olarak yaaptik...
+        System.out.println("London saati : "+time3);
 
     }
 }
