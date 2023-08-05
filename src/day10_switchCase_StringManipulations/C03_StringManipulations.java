@@ -6,7 +6,7 @@ public class C03_StringManipulations {
 
         /*
           String manipulation,
-          verilen bir String uzerinde HAZIR metod'lar kullanarak
+          verilen bir String uzerinde HAZIR method'lar kullanarak
           -degisiklik yapmak
           -veya  verilen string uzerindeki bir bilgiyi
           almak icin yaptigimiz tum islemlerdir
