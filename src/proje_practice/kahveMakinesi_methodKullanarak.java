@@ -4,53 +4,118 @@ import java.util.Scanner;
 
 public class kahveMakinesi_methodKullanarak {
 
+    /*
+    1. Şart
+   3 çeşit kahvemiz olsun.
+  Sistem şu soruyu sorsun: "Hangi Kahveyi istersiniz?"
+
+  Bu soru ile birlikte kullanıcı kahve bilgilerini görsün.
+   Örn:
+  Hangi Kahveyi İstersiniz?
+  1.Türk kahvesi
+  2.Filtre Kahve
+  3.Americano
+     */
+    static String kahveCesidi = "", sut = "", seker = "", kahveBoyutu = "";
+    static int sekerMiktari;
+    static Scanner scan = new Scanner(System.in);
+
+    static void menu() {
+        System.out.println("*******GAHVECİYE HOŞGELDİNİZ*******");
+        do {
+            System.out.print("******MENU******\n" +
+                    "Türk Kahvesi\n" +
+                    "Filtre Kahve\n" +
+                    "Americano\n" +
+                    "SEÇİM:");
+            kahveCesidi = scan.nextLine();
+            if (!kahveCesidi.equalsIgnoreCase("türk kahvesi") &&
+                    !kahveCesidi.equalsIgnoreCase("filtre kahve") &&
+                    !kahveCesidi.equalsIgnoreCase("americano"))
+                System.out.println("BU ÜRÜN MENUDE YOK.....");
+
+        } while (!kahveCesidi.equalsIgnoreCase("türk kahvesi") &&
+                !kahveCesidi.equalsIgnoreCase("filtre kahve") &&
+                !kahveCesidi.equalsIgnoreCase("americano"));
+    }
+
+    /*
+    2.Şart
+  Kahve seçildikten sonra sistem kullanıcıya "Süt eklemek istemisiniz?(Evet veya Hayır olarak cevaplayınız)
+     */
+    static void sutEkleme() {
+        System.out.println("Süt eklemek istemisiniz?(Evet veya Hayır olarak cevaplayınız)");
+        sut = scan.next();
+        if (sut.equalsIgnoreCase("evet"))
+            System.out.println("Süt ekleniyor.....");
+        else
+            System.out.println("Süt eklenmiyor....");
+    }
+
+    /*
+    3. Şart
+  Süt tercihi yapıldıktan sonra sistem kullanıcıya "Şeker ister misiniz ? (Evet veya hayır cevabını veriniz)
+  sorusunu sorsun.
+     */
+    static void sekerEkleme() {
+        System.out.println("Şeker ister misiniz ? (Evet veya hayır cevabını veriniz)");
+        seker = scan.next();
+        if (seker.equalsIgnoreCase("evet")) {
+            System.out.print("Kaç şeker istersiniz: ");
+            sekerMiktari = scan.nextInt();
+            System.out.println(sekerMiktari + " adet şeker ekleniyor....");
+        } else
+            System.out.println("Şeker eklenmiyor....");
+    }
+
+    /*
+    4. Şart
+  Şeker tercihini yaptıktan sonra sistem kullanıcıya kahvenin "Hangi boyutta olsun? (Büyük boy - orta boy - küçük boy olarak giriniz.)
+  sorusunu sorsun.
+     */
+    static void boyutSorgula() {
+        do {
+            System.out.println("Hangi boyutta olsun? (Büyük boy - orta boy - küçük boy olarak giriniz.)");
+            scan.nextLine();
+            kahveBoyutu = scan.nextLine();
+            if (!kahveBoyutu.equalsIgnoreCase("büyük boy") &&
+                    !kahveBoyutu.equalsIgnoreCase("orta boy") &&
+                    !kahveBoyutu.equalsIgnoreCase("kücük boy"))
+                System.out.println("Hatalı giriş yaptınız....");
+
+        } while (!kahveBoyutu.equalsIgnoreCase("büyük boy") &&
+                !kahveBoyutu.equalsIgnoreCase("orta boy") &&
+                !kahveBoyutu.equalsIgnoreCase("kücük boy"));
+
+    }
+    /*
+    Sonuç
+   Siparişlerimizi verdik. Son hali görmek istiyoruz.
+                    konsola şunu yazdırın örnek :
+
+        Türk Kahvesi orta boy hazırdır. Afiyet olsun !!!
+     */
+    static void sonuc(){
+        if (sut.equalsIgnoreCase("evet"))
+            sut="sütlü";
+        else
+            sut="sütsüz";
+
+        if (seker.equalsIgnoreCase("evet"))
+            seker=sekerMiktari+" sekerli";
+        else
+            seker="şekersiz";
+
+        System.out.println(sut+" "+seker+" "+kahveBoyutu+" "+kahveCesidi+" HAZIRDIR. AFİYET OLSUN!!!");
+    }
+
     public static void main(String[] args) {
-
-        kahveSiparisiAl();
+        menu();
+        sutEkleme();
+        sekerEkleme();
+        boyutSorgula();
+        sonuc();
     }
-
-    public static void kahveSiparisiAl() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        // Kahve seçenekleri
-        String[] kahveler = {"Türk kahvesi", "Filtre Kahve", "Espresso"};
-
-        // Hangi Kahveyi istediğini sor
-        System.out.println("Hangi Kahveyi İstersiniz?");
-        for (int i = 0; i < kahveler.length; i++) {
-            System.out.println((i + 1) + "." + kahveler[i]);
-        }
-        int secim = scanner.nextInt();
-        scanner.nextLine(); //  atlama problemini ortadan kaldirmak için
-
-        if (secim < 1 || secim > kahveler.length) {
-            System.out.println("Geçersiz seçim. Lütfen geçerli bir seçim yapınız.");
-            scanner.close();
-            return;
-        }
-
-        String kahveSecimi = kahveler[secim - 1];
-
-        // Süt eklensin mi?
-        System.out.println("Süt eklemek istiyor musunuz? (Evet veya Hayır olarak cevaplayınız)");
-        String sutCevap = scanner.nextLine();
-
-        // Şeker eklensin mi?
-        System.out.println("Şeker ister misiniz? (Evet veya Hayır olarak cevaplayınız)");
-        String sekerCevap = scanner.nextLine();
-
-        // Kahve boyutu
-        System.out.println("Hangi boyutta olsun? (Büyük boy - orta boy - küçük boy olarak giriniz.)");
-        String boyut = scanner.nextLine();
-
-        // Siparişin son hali
-        System.out.println(kahveSecimi + " " + boyut + " hazırdır. Afiyet olsun!!!");
-
-        scanner.close();
-
-    }
-
 
 }
 
