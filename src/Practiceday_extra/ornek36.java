@@ -27,14 +27,25 @@ public class ornek36 {
             int deger= scanner.nextInt();
             olusturulanArray[i]+=deger;
         }
-        ortadakiElement();
+
+            ortadakiElement(olusturulanArray);
+
+    }
+
+    public static void ortadakiElement(int[] olusturulanArray) {
+
+        if (olusturulanArray.length%2==0){
+
+            int ortaIndex1=olusturulanArray.length/2;
+            int ortaIndex2= olusturulanArray.length/2-1;
+            System.out.println("Olusturulan Arrayin Orta elementleri : " + olusturulanArray[ortaIndex2] +"," +olusturulanArray[ortaIndex1]);
+        }else{
+            int ortaIndex= olusturulanArray.length/2;
+            System.out.println("Olusturulan Array'in orta elementi : " + olusturulanArray[ortaIndex]);
+        }
 
 
 
     }
 
-    public static void ortadakiElement() {
-
-
-    }
 }

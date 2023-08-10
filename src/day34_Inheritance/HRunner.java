@@ -7,7 +7,7 @@ public class HRunner {
         // AvciKuslar Class'indan aldigi özellikler
         avciKusKartal.hareket(); // ucarlar
         avciKusKartal.beslenme(); // et yerler
-        avciKusKartal.pence(); // pencelidir
+        //avciKusKartal.pe; // pencelidir
         avciKusKartal.gaga(); // sivri gagali
         // Kuslar Class'indan aldigi özellikler
         avciKusKartal.kanat(); // kanatlidirlar
