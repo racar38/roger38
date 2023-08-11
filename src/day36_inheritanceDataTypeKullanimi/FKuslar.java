@@ -1,19 +1,16 @@
-package day34_Inheritance;
+package day36_inheritanceDataTypeKullanimi;
 
-public class GAvciKuslar extends FKuslar {
-    public void kanat(){
-
+public class FKuslar extends EHayvanlar{
+    protected void kanat(){
         System.out.println("kanatlidirlar");
     }
-    public void solunum(){
+    protected void solunum(){
         System.out.println("akcigerle nefes alirlar");
     }
-    public void gaga(){
-
+    protected void gaga(){
         System.out.println("gagalari vardir");
     }
-    public void cogalma(){
-
+    protected void cogalma(){
         System.out.println("yumurtayla cogalirlar");
     }
 }

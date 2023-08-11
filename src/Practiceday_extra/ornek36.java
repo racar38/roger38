@@ -32,16 +32,19 @@ public class ornek36 {
 
     }
 
-    public static void ortadakiElement(int[] olusturulanArray) {
+    public static int ortadakiElement(int[] olusturulanArray) {
 
         if (olusturulanArray.length%2==0){
 
             int ortaIndex1=olusturulanArray.length/2;
             int ortaIndex2= olusturulanArray.length/2-1;
+            int ortadakiElementler=ortaIndex2+ortaIndex1;
             System.out.println("Olusturulan Arrayin Orta elementleri : " + olusturulanArray[ortaIndex2] +"," +olusturulanArray[ortaIndex1]);
+            return ortadakiElementler;
         }else{
             int ortaIndex= olusturulanArray.length/2;
             System.out.println("Olusturulan Array'in orta elementi : " + olusturulanArray[ortaIndex]);
+            return olusturulanArray[ortaIndex];
         }
 
 
