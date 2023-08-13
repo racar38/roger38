@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class T120_WISEMARKET {
@@ -217,8 +218,10 @@ public class T120_WISEMARKET {
         System.out.println("Toplam Tutar: "+toplam);
         System.out.println(" \n \n");
         System.out.println("------------      İyi Günler Dileriz         --------------");
-        LocalDateTime saat=LocalDateTime.now();
-        System.out.println(saat);
+        LocalDateTime currentTime=LocalDateTime.now();
+        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy HH.mm.ss");
+        String newFormatDateTime= currentTime.format(formatter);
+        System.out.println("Yeni Zaman Biçimi : " +newFormatDateTime);
         System.out.println("ana menüye dönmek için 0 tuşuna basınız. Çıkış yapmak için 5 tuşuna basınız");
         if (urunKodu==0){
             girisEkrani();
