@@ -10,7 +10,7 @@ public class DateTime03 {
         LocalDateTime startDate=LocalDateTime.of(2021,8,15,20,00); // su tarihten
         LocalDateTime currentDate=LocalDateTime.now(); // bu ana kadar
 
-        Duration duration=Duration.between(startDate,currentDate);
+        Duration duration=Duration.between(startDate,currentDate); // ne kadar süre geçti iki zaman arası fark
 
         long day= duration.toDays();
         long hour= duration.toHoursPart();
