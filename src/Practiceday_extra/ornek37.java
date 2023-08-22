@@ -15,38 +15,34 @@ On sayi giriniz:
 ÇIKTI:
 Birbirinden farkli girilen sayilar: 1 2 3 6 4 5
      */
-
     public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Lutfen 10 adet tamsayi giriniz");
+        int[] arr=new int[10];
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("lutfen 10 adet tamsayi giriniz ");
-        int[] arr = new int[10];
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("Lutfen Array'in " + (i + 1) + ".nci" + "elementini giriniz :");
-            arr[i] = scanner.nextInt();
+        for (int i = 0; i < arr.length ; i++) {
+            System.out.print("Lutfen array'in " + (i+1) + ".nci elemanini giriniz : ");
+            arr[i]= scanner.nextInt();
 
         }
         tekrarsiz(arr);
-
-
     }
 
-    public static void tekrarsiz(int[] arr) {
+    public static void tekrarsiz(int[]arr) {
 
-        ArrayList<Integer> tekrarsizliste = new ArrayList<>();
+        ArrayList<Integer> tekrarsizliste=new ArrayList<>();
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length ; i++) {
 
-            if (!tekrarsizliste.contains(arr[i])) {
+            if (!tekrarsizliste.contains(arr[i])){
 
                 tekrarsizliste.add(arr[i]);
-
             }
 
-
         }
-
         System.out.println(tekrarsizliste);
+
     }
+
+
 }

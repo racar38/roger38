@@ -12,7 +12,7 @@ public class C01_HelloWorld {
         System.out.print("hello wise-----");
         // sadece print yazarsak sonraki satırı yanına yazdırır.
         // println yazarsak bir sonraki satırı alta yazdırır.
-        System.out.println("burcu seni çok seviyorum");
+
 
         /*
             bu sekilde yazdigimizda ikisi arasinda
