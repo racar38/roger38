@@ -95,6 +95,76 @@ public class MethodDeposu {
             System.out.println(valueArr[0] + " " + valueArr[1]);
         }
     }
+
+    public static Map<Integer, String> yilSonuSinifArtir(Map<Integer, String> ogrenciMap) {
+
+        Set<Integer> ogrenciKeySeti =ogrenciMap.keySet();
+
+        for (Integer eachKey:ogrenciKeySeti
+             ) {
+
+            String eachValue=ogrenciMap.get(eachKey); // "Ali-Can-11-H-MF"
+
+            String[] valueArr=eachValue.split("-"); // [Ali, Can, 11, H, MF]
+
+            switch (valueArr[2]){
+                case "9":
+                    valueArr[2]="10";
+                    break;
+                case "10":
+                    valueArr[2]="11";
+                    break;
+                case "11":
+                    valueArr[2]="12";
+                    break;
+                case "12":
+                    valueArr[2]="Mezun";
+                    break;
+            }
+
+
+            String yeniValue= valueArr[0]+"-"+valueArr[1]+"-"+valueArr[2]+"-"+valueArr[3]+"-"+valueArr[4];
+
+            ogrenciMap.put(eachKey,yeniValue);
+
+
+
+        }
+        return ogrenciMap;
+    }
+    public static Map<Integer, String> ogrenciBolumDegistir(Map<Integer, String> ogrenciMap, String eskiBolum, String yeniBolum) {
+
+        // update icin key ve value'nun ikisine de ihtiyacimiz var
+
+        Set<Integer>  ogrenciKeySet = ogrenciMap.keySet(); // [101, 102, 103, 104, 105, 106]
+
+        // her bir key'e ait value'yu cagirip, update edip, yeni haliyle map'e ekleyelim
+
+        for (Integer eachKey: ogrenciKeySet // 101
+        ) {
+
+            String eachValue = ogrenciMap.get(eachKey); // "Ali-Can-11-H-MF"
+
+            String[] valueArr = eachValue.split("-");// [Ali, Can, 11, H, MF]
+
+            // artik array'de update yapabiliriz
+
+            if (valueArr[4].equalsIgnoreCase(eskiBolum)){
+                valueArr[4] = yeniBolum;
+            }
+
+            // update edilen array'i map'e value olarak koymak icin birlestirelim
+            String yeniValue= valueArr[0]+"-"+valueArr[1]+"-"+valueArr[2]+"-"+valueArr[3]+"-"+valueArr[4];
+
+            // key var, value'nun update hali de var
+            ogrenciMap.put(eachKey,yeniValue);
+
+        }
+
+        return ogrenciMap;
+    }
+
+
 }
         /*
         Elimizde map var
