@@ -7,6 +7,8 @@ public class C03_SinifListesi {
         // ogrenci map'de sinif ve sube verdigimizde
         // o sinifta bulunan ogrenci isim ve soyisimlerini yazdirin
         Map<Integer,String> ogrenciMap = MethodDeposu.ogrenciMapOlustur();
+        // öğrenci bilgilerini tek tek girmemek için hazır olusturduğumuz
+        //MethodDeposundan alıyoruz....
         MethodDeposu.sinifSubedekiOgrenciListesiYazdir(ogrenciMap,11,"h");
     }
 }

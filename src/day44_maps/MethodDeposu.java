@@ -18,21 +18,29 @@ public class MethodDeposu {
     }
 
     public static void isimSoyisimListesiYazdir(Map<Integer, String> ogrenciMap) {
-        Collection<String> valueCollection = ogrenciMap.values();
-        System.out.println("Sira No   Isim  Soyisim");
-        System.out.println("=======================");
-        int siraNo = 1;
-        for (String eachValue : valueCollection  // "Ali-Can-11-H-MF"
-        ) {
-            String[] valueArr = eachValue.split("-"); // [Ali, Can, 11, H, MF]
-            System.out.println(siraNo + " -   " + valueArr[0] + " " + valueArr[1]);
-            siraNo++;
+
+       Collection<String> valueCollection=ogrenciMap.values();  // map den bir alt kademeye indik...
+
+        System.out.println("Sira No    Isim     Soyisim");
+        System.out.println("============================");
+
+        int sıraNo=1;
+        for (String eachValue:valueCollection  // "Ali-Can-11-H-MF" bu tarz value ları getirecek
+             ) {
+
+            String[] valueArr =eachValue.split("-"); //[Ali, Can, 11, H, MF,] bu şekile çevirdik
+            System.out.println(sıraNo+"-      " +valueArr[0] + "      " +valueArr[1]);
+            sıraNo++;
+
+
+
         }
+
     }
 
     public static void sinifSubedekiOgrenciListesiYazdir(Map<Integer, String> ogrenciMap, int sinif, String sube) {
-        //1- tum value'leri bir Collection olarak kaydedelim
-        Collection<String> valueCollection = ogrenciMap.values();
+        //1- tum value'leri bir Collection olarak kaydedelim...Bir alt kademeye gecelim
+       Collection<String> valueCollection=ogrenciMap.values();
         //2- bir for-each loop ile herbir value'yu ele alalim
         System.out.println(sinif + ".sinif " + sube + " subesindeki ogrenci listesi");
         System.out.println("=================================");
@@ -44,7 +52,7 @@ public class MethodDeposu {
             String[] valueArr = eachValue.split("-"); // [Ali, Can, 11, H, MF]
             //4- artik bir array ve icerisinde value'yu olusturan bilgiler mevcut
             //   istenen bilgiyi, array'den index ile alabiliriz
-            String sinifStr = sinif + "";
+            String sinifStr = sinif + "";  // bizden int sinif istediği için  String metne çevirelim....
             if (valueArr[2].equals(sinifStr) && valueArr[3].equalsIgnoreCase(sube)) {
                 System.out.println(valueArr[0] + " " + valueArr[1]);
             }
@@ -52,7 +60,7 @@ public class MethodDeposu {
     }
 
     public static void isimSoyisimIleOgrenciBul(Map<Integer, String> ogrenciMap, String isim, String soyisim) {
-        Collection<String> valueCollection = ogrenciMap.values();
+        Collection<String> valueCollection = ogrenciMap.values();  // bir alt kademeye gecis yapıldı
         for (String eachValue : valueCollection  // "Ali-Can-11-H-MF"
         ) {
             String[] valueArr = eachValue.split("-"); // [Ali, Can, 11, H, MF]
@@ -66,7 +74,7 @@ public class MethodDeposu {
     public static void numaraIleOgrenciBilgisiyazdirma(Map<Integer, String> ogrenciMap, int ogrenciNo) {
         String istenenOgrenciValue = ogrenciMap.get(ogrenciNo); // "Ali-Can-11-H-MF"
         // numarasi verilen ogrencinin isim, soyisim, sinif ve subesini yazdirin
-        String[] istenenOgrenciArr = istenenOgrenciValue.split("-"); // // [Ali, Can, 11, H, MF]
+        String[] istenenOgrenciArr = istenenOgrenciValue.split("-"); // // [Ali, Can, 11, H, MF] bilgileri rahat bir şekilde almak için   array  formata dönüstürdük
         System.out.println("Isim : " + istenenOgrenciArr[0] + ", " +
                 "Soyisim : " + istenenOgrenciArr[1] + ", " +
                 "Sinif : " + istenenOgrenciArr[2] + ", " +
@@ -108,7 +116,7 @@ public class MethodDeposu {
         Sevgi-Can-10-K-MF
         ]
         2- value icerisindeki bilgilere rahat ulasabilmek icin
-           for each loop ile her bir value'yu alip split ile array'e cevirelim
+           for each loop ile her bir value'yu alip   ,  split ile array'e cevirelim
            [Ali, Can, 11, H, MF]
          3- Eger sinif ve sube parametre olarak verilen ile ayni ise
             isim ve soyismi yazdir

@@ -4,14 +4,17 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class C01_MapOlusturma {
+
     public static void main(String[] args) {
-        Map<Integer,String> ogrenciMap = new TreeMap<>();
-        ogrenciMap.put(101,"Ali-Can-11-H-MF");
-        ogrenciMap.put(102,"Veli-Cem-10-K-TM");
-        ogrenciMap.put(103,"Ali-Cem-11-K-TM");
-        ogrenciMap.put(104,"Ayse-Can-10-H-MF");
-        ogrenciMap.put(105,"Sevgi-Cem-11-M-TM");
-        ogrenciMap.put(106,"Sevgi-Can-10-K-MF");
+
+        Map<Integer, String> ogrenciMap = new TreeMap<>();
+
+        ogrenciMap.put(101, "Ali-Can-11-H-MF");         // add yoktur ekleme put ile yapılır...
+        ogrenciMap.put(102, "Veli-Cem-10-K-TM");
+        ogrenciMap.put(103, "Ali-Cem-11-K-TM");
+        ogrenciMap.put(104, "Ayse-Can-10-H-MF");
+        ogrenciMap.put(105, "Sevgi-Cem-11-M-TM");
+        ogrenciMap.put(106, "Sevgi-Can-10-K-MF");
         System.out.println(ogrenciMap);
         /*
         {
@@ -22,8 +25,8 @@ public class C01_MapOlusturma {
         105=Sevgi-Cem-11-M-TM,
         106=Sevgi-Can-10-K-MF}
          */
-        System.out.println(ogrenciMap.keySet()); // [101, 102, 103, 104, 105, 106]
-        System.out.println(ogrenciMap.values());
+        System.out.println(ogrenciMap.keySet()); // [101, 102, 103, 104, 105, 106] // map içerisindeki keyleri döndürür.
+        System.out.println(ogrenciMap.values()); // map içerisindeki value leri döndürür...
         /*
         [
         Ali-Can-11-H-MF,

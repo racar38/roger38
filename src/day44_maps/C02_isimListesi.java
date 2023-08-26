@@ -26,6 +26,8 @@ public class C02_isimListesi {
                istenen bilgiyi, array'den index ile alabiliriz
          */
         Map<Integer,String> ogrenciMap = MethodDeposu.ogrenciMapOlustur();
+        // öğrenci bilgilerini tek tek girmemek için hazır olusturduğumuz
+        //MethodDeposundan alıyoruz....
         ogrenciMap.put(110,"Kaan-Can-12-K-MF");
         System.out.println(ogrenciMap);
         // {101=Ali-Can-11-H-MF, 102=Veli-Cem-10-K-TM, 103=Ali-Cem-11-K-TM, 104=Ayse-Can-10-H-MF, 105=Sevgi-Cem-11-M-TM, 106=Sevgi-Can-10-K-MF, 110=Kaan-Can-12-K-MF}
