@@ -14,7 +14,7 @@ public class C05_KeyIleValueyaUlasma {
 
         System.out.println(ogrenciMap.get(102));
 
-        MethodDeposu.numaraIleOgrenciBilgisiyazdirma(ogrenciMap,103);
+        MethodDeposu.numaraIleOgrenciBilgisiyazdirma(ogrenciMap,101);
 
 
     }
